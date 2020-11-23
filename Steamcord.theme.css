@@ -1,0 +1,102 @@
+//META{"name":"Steamcord","description":"A Steam Theme'd Discord look!","author":"Wapour Vave⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀Enable Me Please! ->","version":"0.0.1"}*//{}
+
+/*-----------------------------------------
+-------------------------------------------
+		  Steamcord Discord Theme
+-------------------------------------------
+-----------------------------------------*/
+
+/* Global Variables */
+:root
+{
+    /* --header-primary: #fff; */
+}
+
+/*-----------------------------------------
+				Version Info
+-----------------------------------------*/
+/* Hide the Name, Version and Author all in one fatal swoop */
+#Steamcord-card .bd-version, #Steamcord-card .bd-author
+{
+ 	font-size: 0px;
+}
+
+/* Hide default BD Theme Icon */
+/*#Steamcord-card .bd-addon-header svg
+{
+	display: none;
+}*/
+
+/* Add Steam icon as Theme Icon */
+/*#Steamcord-card .bd-addon-header
+{
+	background-image: url("https://p1.hiclipart.com/preview/219/790/350/steam-big-icon-steam-png-clipart.jpg");
+	background-repeat: no-repeat;
+	background-size: 10%;
+}
+*/
+/* Steamcord Version */
+#Steamcord-card .bd-version:after
+{
+	font-size: 14px;
+	content: "v0.0.1 ";
+}
+
+/* Steamcord Author */
+#Steamcord-card .bd-author:after
+{
+	font-size: 14px;
+	content: "Wapour Vave⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀Thank You Friend! 🙂";
+}
+
+/*-----------------------------------------
+				Titlebar
+-----------------------------------------*/
+
+/*-----------------------------------------
+				Sidebar
+-----------------------------------------*/
+/* Apply to Sidebar when WinApp */
+.platform-win .sidebar-2K8pFh
+{
+	border-radius: 0px;
+}
+
+/*-----------------------------------------
+				Chat Title
+-----------------------------------------*/
+/* Help Button */
+[aria-label="Help"]
+{
+	display: none;
+}
+
+/*-----------------------------------------
+				Text Area
+-----------------------------------------*/
+/* Text Small Area Fade */
+.form-2fGMdU::before
+{
+	display: none;
+}
+
+/* Text Container */
+.form-2fGMdU
+{
+/*	background-color: var(--background-secondary-alt);*/
+	padding-top: 4.5px;
+	padding-bottom: 4.5px;
+	padding-left: 9px;
+	padding-right: 9px;
+	box-shadow: 10px 10px;
+}
+
+/* Channel Text Box */
+.channelTextArea-rNsIhG
+{
+	margin-bottom: 0px;
+}
+.scrollableContainer-2NUZem
+{
+	border-radius: 0px;
+}
