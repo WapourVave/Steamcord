@@ -1,4 +1,4 @@
-//META{"name":"Steamcord","description":"A Steam Theme'd Discord look!","author":"Wapour Vave⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀Enable Me Please! ->","version":"0.0.1"}*//{}
+//META{"name":"Steamcord","description":"A Steam Theme'd Discord look!","author":"Wapour Vave#1388⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀Enable Me Please! ->","version":"0.0.2"}*//{}
 
 /*-----------------------------------------
 -------------------------------------------
@@ -10,11 +10,36 @@
 :root
 {
     /* --header-primary: #fff; */
+    --icon-static: #788a92;
+    --Steamcord-text-background: #1b1c20;
+    --channeltextarea-background: #22252b;
+    --scrollbar-auto-thumb: #434953;
+    --scrollbar-auto-track: transparent;
+}
+
+body
+{
+
 }
 
 /*-----------------------------------------
 				Version Info
 -----------------------------------------*/
+/* Steamcord Title Control */
+#Steamcord-card .bd-title
+{
+	margin-left: 25px;
+}
+
+/* Add Steam icon as Theme Icon */
+#Steamcord-card .bd-addon-header
+{
+	background-image: url('https://raw.githubusercontent.com/WapourVave/Steamcord/main/Images/Logo/Steam_Icon.svg');
+	background-repeat: no-repeat;
+	background-size: 13.49px;
+	background-position: 16px 22px;
+}
+
 /* Hide the Name, Version and Author all in one fatal swoop */
 #Steamcord-card .bd-version, #Steamcord-card .bd-author
 {
@@ -22,19 +47,11 @@
 }
 
 /* Hide default BD Theme Icon */
-/*#Steamcord-card .bd-addon-header svg
+#Steamcord-card .bd-addon-header svg
 {
 	display: none;
-}*/
-
-/* Add Steam icon as Theme Icon */
-/*#Steamcord-card .bd-addon-header
-{
-	background-image: url("https://p1.hiclipart.com/preview/219/790/350/steam-big-icon-steam-png-clipart.jpg");
-	background-repeat: no-repeat;
-	background-size: 10%;
 }
-*/
+
 /* Steamcord Version */
 #Steamcord-card .bd-version:after
 {
@@ -46,12 +63,13 @@
 #Steamcord-card .bd-author:after
 {
 	font-size: 14px;
-	content: "Wapour Vave⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀Thank You Friend! 🙂";
+	content: "Wapour Vave#1388⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀Thank You Friend! 🙂";
 }
 
 /*-----------------------------------------
 				Titlebar
 -----------------------------------------*/
+
 
 /*-----------------------------------------
 				Sidebar
@@ -63,7 +81,7 @@
 }
 
 /*-----------------------------------------
-				Chat Title
+				Guild Title
 -----------------------------------------*/
 /* Help Button */
 [aria-label="Help"]
@@ -72,10 +90,69 @@
 }
 
 /*-----------------------------------------
+				Guild Info
+-----------------------------------------*/
+/* Title Div */
+.container-1taM1r, .chat-3bRxxu [aria-label="Channel header"]
+{
+    background: linear-gradient(to right, #3a3e46 80%, #2c3037 100%);
+}
+
+/* Remove shadow glitch */
+.children-19S4PO:after
+{
+	display: none;
+}
+
+/* Title Shadow */
+.title-3qD0b-
+{
+	box-shadow: 0 10px 15px 0px #141518;
+	z-index: 2;
+}
+
+
+/*-----------------------------------------
+				Guild Channels
+-----------------------------------------*/
+/*[aria-label="Channels"]
+{
+	box-shadow: 0 8px 6px -6px black;
+}
+*/
+
+
+.scrollerContent-WzeG7R
+{
+	box-shadow: inset 5px -25px 15px -10px #141518;
+
+}
+
+/*-----------------------------------------
+				Guild Content
+-----------------------------------------*/
+/* Chat Background */
+.container-3w7J-x, .chat-2bRxxu, .membersWrap-2h-GB4, .content-3YMskv, .chatContent-a9vAAp, .scroller-2LSbBU
+{
+
+/*	background-color: #202227;*/
+	background: radial-gradient(ellipse farthest-corner at 50% 30%, #212329 10%, #1e2025 50%, #1c1d22 100%);
+	background-attachment: fixed;
+}
+
+/*-----------------------------------------
+			Profile Widgets
+-----------------------------------------*/
+.container-3baos1
+{
+	background-color: var(--channeltextarea-background);
+}
+
+/*-----------------------------------------
 				Text Area
 -----------------------------------------*/
-/* Text Small Area Fade */
-.form-2fGMdU::before
+/* Text Small Area Bug */
+.form-2fGMdU:before
 {
 	display: none;
 }
@@ -83,12 +160,13 @@
 /* Text Container */
 .form-2fGMdU
 {
-/*	background-color: var(--background-secondary-alt);*/
+	background-color: var(--channeltextarea-background);
 	padding-top: 4.5px;
 	padding-bottom: 4.5px;
-	padding-left: 9px;
-	padding-right: 9px;
-	box-shadow: 10px 10px;
+	padding-left: 0px;
+	padding-right: 0px;
+	z-index: 3;
+	width: calc(100vw - 312px);
 }
 
 /* Channel Text Box */
@@ -99,4 +177,62 @@
 .scrollableContainer-2NUZem
 {
 	border-radius: 0px;
+}
+
+/* Text Box Interactables */
+.scrollableContainer-2NUZem
+{
+
+}
+
+/* Text Box Input */
+.textArea-12jD-V
+{
+	background-color: var(--Steamcord-text-background);
+	box-shadow: inset 0px 0px 4px #000000;
+}
+
+/* Text Box Text */
+.placeholder-37qJjk, .slateTextArea-1Mkdgw
+{
+	padding-left: 10px;
+}
+
+/* Chat Icon Remover */
+button[aria-label="Send a gift"] , button[aria-label="Open GIF picker"] , button[aria-label="Open sticker picker"]
+{
+	display: none;
+}
+
+/**
+	FIX FIX FIX FIX NEEDS IMAGE
+/*
+
+/* Attachment Icon */
+.sansAttachButton-td2irx
+{
+	padding-left: 0px;
+}
+
+[aria-label="Upload a File"]
+{
+	position: absolute;
+
+}
+
+/* Char Counter */
+.counter-uAzbKp
+{
+/*	height: 50px;
+	width: 100px;*/
+}
+
+/*-----------------------------------------
+				User Area
+-----------------------------------------*/
+/* Members Wrapper */
+.membersWrap-2h-GB4
+{
+	border-left: 1px solid #22252b;
+	z-index: 2;
 }
