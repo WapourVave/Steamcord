@@ -145,7 +145,24 @@ body
 #svg-mask-status-online,
 #svg-mask-status-idle,
 #svg-mask-status-dnd,
-#svg-mask-status-offline
+#svg-mask-status-offline,
+#c412437b-f0bd-4ceb-a680-f94723fc1895,
+#f6d806bc-f13f-4929-b5e5-e3b385934b14
+{
+	display: none;
+}
+.mask-1l8v16 circle
+{
+    r: 360;
+}
+.mask-1l8v16 rect
+{
+	x: 22px;
+    width: 16;
+}
+
+/* Typing Bubbles */
+.cursorDefault-dsQJ1n svg
 {
 	display: none;
 }
