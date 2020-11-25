@@ -15,6 +15,7 @@
     --channeltextarea-background: #22252b;
     --scrollbar-auto-thumb: #434953;
     --scrollbar-auto-track: transparent;
+    --Steamcord-textchat-height-addition: 20px;
 }
 
 body
@@ -70,6 +71,17 @@ body
 				Titlebar
 -----------------------------------------*/
 
+/*-----------------------------------------
+				Clientwide
+-----------------------------------------*/
+/* Client Background */
+.container-3w7J-x, .chat-2bRxxu, .membersWrap-2h-GB4, .content-3YMskv, .chatContent-a9vAAp, .scroller-2LSbBU, .members-1998pB
+{
+
+/*	background-color: #202227;*/
+	background: radial-gradient(ellipse farthest-corner at 50% 30%, #212329 10%, #1e2025 50%, #1c1d22 100%);
+	background-attachment: fixed;
+}
 
 /*-----------------------------------------
 				Sidebar
@@ -125,20 +137,12 @@ body
 .scrollerContent-WzeG7R
 {
 	box-shadow: inset 5px -25px 15px -10px #141518;
-
 }
 
 /*-----------------------------------------
 				Guild Content
 -----------------------------------------*/
-/* Chat Background */
-.container-3w7J-x, .chat-2bRxxu, .membersWrap-2h-GB4, .content-3YMskv, .chatContent-a9vAAp, .scroller-2LSbBU
-{
 
-/*	background-color: #202227;*/
-	background: radial-gradient(ellipse farthest-corner at 50% 30%, #212329 10%, #1e2025 50%, #1c1d22 100%);
-	background-attachment: fixed;
-}
 
 /*-----------------------------------------
 			Profile Widgets
@@ -235,4 +239,11 @@ button[aria-label="Send a gift"] , button[aria-label="Open GIF picker"] , button
 {
 	border-left: 1px solid #22252b;
 	z-index: 2;
+	padding-bottom: 52.99px;
+	background-color: red;
+}
+
+.members-1998pB
+{
+	
 }
