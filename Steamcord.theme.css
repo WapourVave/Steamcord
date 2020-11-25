@@ -13,9 +13,22 @@
     --icon-static: #788a92;
     --Steamcord-text-background: #1b1c20;
     --channeltextarea-background: #22252b;
-    --scrollbar-auto-thumb: #434953;
+    --Steamcord-scroller: #434953;
+    --Steamcord-scroller-hovered: #58606d;
     --scrollbar-auto-track: transparent;
     --Steamcord-textchat-height-addition: 20px;
+    --Steamcord-textchat-button-normal: #2c3036;
+    --Steamcord-textchat-button-hovered: #3d424b;
+    --Steamcord-selected: #3a3e46;
+
+    /* Text Buttons */
+    --Steamcord-textchat-button-color: #2c3036;
+    --Steamcord-textchat-button-color-hover: #5a5e66;
+    --Steamcord-textchat-emoji-right: 5vw;
+
+	/* Status */
+    --Steamcord-status-online: #2a85d4;
+
 }
 
 body
@@ -68,10 +81,6 @@ body
 }
 
 /*-----------------------------------------
-				Titlebar
------------------------------------------*/
-
-/*-----------------------------------------
 				Clientwide
 -----------------------------------------*/
 /* Client Background */
@@ -82,6 +91,102 @@ body
 	background: radial-gradient(ellipse farthest-corner at 50% 30%, #212329 10%, #1e2025 50%, #1c1d22 100%);
 	background-attachment: fixed;
 }
+
+/* Client Thick Scroller */
+.auto-Ge5KZx::-webkit-scrollbar-thumb
+{
+	background-color: var(--Steamcord-scroller);
+}
+.auto-Ge5KZx::-webkit-scrollbar-thumb:hover
+{
+	background-color: var(--Steamcord-scroller-hovered);
+}
+
+/* Client Thin Scroller */
+.thin-1ybCId::-webkit-scrollbar
+{
+	display: none;
+}
+.fade-2kXiP2::-webkit-scrollbar-thumb
+{
+	background-color: var(--Steamcord-scroller);
+	border: 4px solid transparent;
+    background-clip: padding-box;
+    border-radius: 8px;
+}
+.fade-2kXiP2::-webkit-scrollbar-thumb:hover
+{
+	background-color: var(--Steamcord-scroller-hovered);
+}
+.fade-2kXiP2::-webkit-scrollbar-thumb, .fade-2kXiP2::-webkit-scrollbar-track
+{
+	visibility: visible;
+}
+
+/*-----------------------------------------
+				Avatars
+-----------------------------------------*/
+/* Global Avatar Settings */
+#svg-mask-avatar-status-round-32,
+#svg-mask-avatar-status-mobile-32
+{
+	display: none;
+}
+
+/* Chat Avatars */
+.avatar-1BDn8e
+{
+	border-radius: 0;
+	width: 40px;
+	height: 40px;
+}
+
+/* Status Mask Global */
+#svg-mask-status-online,
+#svg-mask-status-idle,
+#svg-mask-status-dnd,
+#svg-mask-status-offline
+{
+	display: none;
+}
+
+/**
+	Needs More Statuses for Self
+*/
+
+/* Status Global */
+.avatar-3uk_u9 .wrapper-3t9DeA[aria-label*="Online"] rect,
+/*.avatar-SmRMf2[aria-label*="Online"] rect*/
+.avatar-3uk_u9 .wrapper-3t9DeA[aria-label*="Idle"] rect,
+.avatar-3uk_u9 .wrapper-3t9DeA[aria-label*="Do Not Disturb"] rect,
+.avatar-SmRMf2[aria-label*="Invisible"] rect
+{
+	transform: translate(9px, -22px);
+	width: 2px;
+	height: 32px;
+}
+
+/* Mobile Status Global */
+.avatar-3uk_u9 .wrapper-3t9DeA[aria-label*="Online via mobile"] rect,
+.avatar-3uk_u9 .wrapper-3t9DeA[aria-label*="Idle via mobile"] rect,
+.avatar-3uk_u9 .wrapper-3t9DeA[aria-label*="Do Not Disturb via mobile"] rect
+{
+	transform: translate(0px, -17px);
+	width: 10px;
+	height: 15px;
+}
+
+/* Status Online */
+.avatar-3uk_u9 .wrapper-3t9DeA[aria-label*="Online"] rect,
+.avatar-3uk_u9 .wrapper-3t9DeA[aria-label*="Online via mobile"] rect
+{
+	fill: var(--Steamcord-status-online);
+}
+
+/*-----------------------------------------
+				Titlebar
+-----------------------------------------*/
+
 
 /*-----------------------------------------
 				Sidebar
@@ -123,26 +228,41 @@ body
 	z-index: 2;
 }
 
-
 /*-----------------------------------------
 				Guild Channels
 -----------------------------------------*/
-/*[aria-label="Channels"]
+/* Channel Name Content */
+.content-1x5b-n
 {
-	box-shadow: 0 8px 6px -6px black;
+	margin-left: 0px;
+	border-radius: 0px;
 }
-*/
 
+/* Currently Selected Channel */
+.selected-3LIHYU
+{
+	background-color: var(--Steamcord-selected);
+}
 
+/*-----------------------------------------
+			Guild Content
+-----------------------------------------*/
+.scrollerInner-2YIMLh
+{
+	max-height: calc(100vw - 52.99px);
+}
+
+/* Client Shadow Control */
+.scroller-2LSbBU
+{
+	box-shadow: inset 5px -25px 15px -10px #141518; /* Changes Guild Content Shadow */
+}
+
+/* Actual Scroller */
 .scrollerContent-WzeG7R
 {
 	box-shadow: inset 5px -25px 15px -10px #141518;
 }
-
-/*-----------------------------------------
-				Guild Content
------------------------------------------*/
-
 
 /*-----------------------------------------
 			Profile Widgets
@@ -170,7 +290,7 @@ body
 	padding-left: 0px;
 	padding-right: 0px;
 	z-index: 3;
-	width: calc(100vw - 312px);
+	width: calc(100vw - 312px); /* Scales the width automatically */
 }
 
 /* Channel Text Box */
@@ -183,14 +303,8 @@ body
 	border-radius: 0px;
 }
 
-/* Text Box Interactables */
-.scrollableContainer-2NUZem
-{
-
-}
-
-/* Text Box Input */
-.textArea-12jD-V
+/* Text Box + Emote Input Shadows */
+.slateTextArea-1Mkdgw, .buttons-3JBrkn
 {
 	background-color: var(--Steamcord-text-background);
 	box-shadow: inset 0px 0px 4px #000000;
@@ -202,28 +316,117 @@ body
 	padding-left: 10px;
 }
 
-/* Chat Icon Remover */
-button[aria-label="Send a gift"] , button[aria-label="Open GIF picker"] , button[aria-label="Open sticker picker"]
+/* Text Box Input Size */
+.textArea-12jD-V
+{
+	margin-right: 100px ; /* Text Box Location (Less is more) */
+}
+
+/*-----------------------------------------
+				Text Buttons
+-----------------------------------------*/
+
+/* Chat Buttons Global */
+.buttons-3JBrkn
+{
+	right: var(--Steamcord-textchat-emoji-right); /* Button Location (Less is more) */ 
+	height: 43.09px;
+}
+
+/* Chat Button Removals */
+button[aria-label="Send a gift"], button[aria-label="Open GIF picker"], button[aria-label="Open sticker picker"]
 {
 	display: none;
 }
 
-/**
-	FIX FIX FIX FIX NEEDS IMAGE
-/*
+/* Emoji Picker Button */
+button[aria-label="Select emoji"]
+{
+	margin-right: 0px; /* Controls Emoji Container Size */
+	margin-left: 1px;  /* Controls Emoji Container Size */
+}
 
-/* Attachment Icon */
+/* Emoji Sprite Global */
+.sprite-2iCowe,
+.attachButtonInner-PQjIyk
+{
+	width: 34px;
+	height: 34px;
+}
+
+/* Remove the ugly Emoji Sprites */
+.emojiButtonNormal-TdumYh .contents-18-Yxp .sprite-2iCowe,
+.sprite-2iCowe
+{
+	background-image: url('https://raw.githubusercontent.com/WapourVave/Steamcord/main/Images/Icons/Steam_Smile.svg');
+	background-size: 30px 30px!important;
+	filter: none!important;
+	background-position: center!important;
+	transform: scale(1)!important;
+}
+
+/* Emoji Button Normal */
+.emojiButtonNormal-TdumYh .contents-18-Yxp .sprite-2iCowe,
+.attachButtonInner-PQjIyk
+{
+	background-color: var(--Steamcord-textchat-button-color);
+}
+
+/* Emoji Button Hovered */
+.contents-18-Yxp .sprite-2iCowe,
+.attachButtonInner-PQjIyk:hover
+{
+	background-image: url('https://raw.githubusercontent.com/WapourVave/Steamcord/main/Images/Icons/Steam_Smile_hover.svg');
+	background-color: var(--Steamcord-textchat-button-color-hover);
+}
+
+/* Google Translate Button */
+.translateButton-DhP9x8
+{
+	padding-right: 0px;
+	display: none;
+}
+
+/* Attachment Button Wrapper */
 .sansAttachButton-td2irx
 {
 	padding-left: 0px;
 }
 
+/* Attachment Button */
 [aria-label="Upload a File"]
 {
 	position: absolute;
-
+	border-radius: 0px;
+	height: 43.08px;
+	width: 41.98px;
+/*	top: 4px;*/
+	right:  calc(var(--Steamcord-textchat-emoji-right) + -73.6vw) ; /* Distance from Emoji Picker */
+	padding-left: 4px;
+	padding-right: 4px;
+	padding-top: 4px;
 }
 
+[aria-label="Upload a File"] svg
+{
+	display: none;
+}
+
+.attachButtonInner-PQjIyk
+{
+	background-image: url('https://raw.githubusercontent.com/WapourVave/Steamcord/main/Images/Icons/Steam_Smile.svg');
+	background-size: 30px 30px;
+	background-position: center;
+}
+
+/* Attachment Image */
+/*.attachButtonInner-PQjIyk
+{
+	background-color: var(--Steamcord-textchat-button-normal);
+	width: 34px;
+	height: 34px;
+}
+*/
 /* Char Counter */
 .counter-uAzbKp
 {
@@ -241,9 +444,17 @@ button[aria-label="Send a gift"] , button[aria-label="Open GIF picker"] , button
 	z-index: 2;
 	padding-bottom: 52.99px;
 	background-color: red;
+    --scrollbar-thin-thumb: var(--scrollbar-auto-thumb);
 }
 
 .members-1998pB
 {
-	
+
+}
+
+/* Scroller */
+.membersWrap-2h-GB4 .thin-1ybCId::-webkit-scrollbar
+{
+	display: block;
+	width: 16px;
 }
