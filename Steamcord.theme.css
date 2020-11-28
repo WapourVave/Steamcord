@@ -11,24 +11,44 @@
 {
     /* --header-primary: #fff; */
     --icon-static: #788a92;
-    --Steamcord-text-background: #1b1c20;
-    --channeltextarea-background: #22252b;
+
     --Steamcord-scroller: #434953;
     --Steamcord-scroller-hovered: #58606d;
     --scrollbar-auto-track: transparent;
-    --Steamcord-textchat-height-addition: 20px;
-    --Steamcord-textchat-button-normal: #2c3036;
-    --Steamcord-textchat-button-hovered: #3d424b;
+
     --Steamcord-selected: #3a3e46;
 
-    /* Text Buttons */
-    --Steamcord-textchat-button-color: #2c3036;
-    --Steamcord-textchat-button-color-hover: #5a5e66;
-    --Steamcord-textchat-emoji-right: 5vw;
-
-	/* Status */
+    /* Avatars */
+    --Steamcord-avatar-width: 2px;
     --Steamcord-status-online: #2a85d4;
 
+	/* Text Area */
+	--Steamcord-textinput-padding-bottom: 8.5px;
+	--Steamcord-textarea-height-reverse: 1px;
+
+	--Steamcord-textform-padding-left: 9px;
+	--Steamcord-textform-padding-top: 0px;
+	--Steamcord-textform-padding-bottom: 0px;
+    --channeltextarea-background: #22252b;
+    --Steamcord-textinput-width: calc(590px + var(--Steamcord-textinput-padding-right));
+    --Steamcord-textinput-padding-top: 3px;
+    --Steamcord-textinput-padding-left: 8px;
+    --Steamcord-textinput-padding-right: 8px;
+    --Steamcord-textinput-background: #1b1c20;
+    --Steamcord-textinput-box-shadow: inset 0px 0px 4px #000000;
+
+    /* Text Buttons */
+    --Steamcord-textchat-buttons-height: 32px;
+    --Steamcord-textchat-buttons-width: 28px;
+	--Steamcord-textchat-buttons-background-right: 1px;
+	--Steamcord-textchat-buttons-background-left: 1px;
+
+    --Steamcord-textchat-buttons-right: 100px;
+    --Steamcord-textchat-buttons-bottom: 0px;
+    --Steamcord-textchat-button-normal: #2c3036;
+    --Steamcord-textchat-button-hovered: #3d424b;
+    --Steamcord-textchat-button-color: #2c3036;
+    --Steamcord-textchat-button-color-hover: #5a5e66;
 }
 
 body
@@ -168,18 +188,21 @@ body
 }
 
 /**
-	Needs More Statuses for Self
+	Statuses for Self Borked + Streaming missing
 */
 
 /* Status Global */
 .avatar-3uk_u9 .wrapper-3t9DeA[aria-label*="Online"] rect,
-/*.avatar-SmRMf2[aria-label*="Online"] rect*/
+/*.avatar-SmRMf2[aria-label*="Online"] rect,*/
 .avatar-3uk_u9 .wrapper-3t9DeA[aria-label*="Idle"] rect,
+/*.avatar-SmRMf2[aria-label*="Idle"] rect,*/
 .avatar-3uk_u9 .wrapper-3t9DeA[aria-label*="Do Not Disturb"] rect,
+/*.avatar-SmRMf2[aria-label*="Do Not Disturb"] rect,*/
+.avatar-3uk_u9 .wrapper-3t9DeA[aria-label*="Invisible"] rect,
 .avatar-SmRMf2[aria-label*="Invisible"] rect
 {
 	transform: translate(9px, -22px);
-	width: 2px;
+	width: var(--Steamcord-avatar-width);
 	height: 32px;
 }
 
@@ -302,9 +325,9 @@ body
 .form-2fGMdU
 {
 	background-color: var(--channeltextarea-background);
-	padding-top: 4.5px;
-	padding-bottom: 4.5px;
-	padding-left: 0px;
+	padding-top: var(--Steamcord-textform-padding-top);
+	padding-bottom: var(--Steamcord-textform-padding-bottom);
+	padding-left: var(--Steamcord-textform-padding-left);
 	padding-right: 0px;
 	z-index: 3;
 	width: calc(100vw - 312px); /* Scales the width automatically */
@@ -313,6 +336,7 @@ body
 /* Channel Text Box */
 .channelTextArea-rNsIhG
 {
+	margin-top: 9px;
 	margin-bottom: 0px;
 }
 .scrollableContainer-2NUZem
@@ -320,34 +344,56 @@ body
 	border-radius: 0px;
 }
 
-/* Text Box + Emote Input Shadows */
-.slateTextArea-1Mkdgw, .buttons-3JBrkn
+/* Real Text Box */
+.slateTextArea-1Mkdgw
 {
-	background-color: var(--Steamcord-text-background);
-	box-shadow: inset 0px 0px 4px #000000;
+	padding-top: var(--Steamcord-textarea-height-reverse);
+	width: var(--Steamcord-textinput-width);
+}
+
+/* Text Box Size */
+[data-slate-object="block"]
+{
+/*	width: var(--Steamcord-textinput-width); */
+	padding-top: var(--Steamcord-textinput-padding-top);
+	padding-bottom: var(--Steamcord-textinput-padding-bottom);
+	padding-left: var(--Steamcord-textinput-padding-left);
+	padding-right: var(--Steamcord-textinput-padding-right);
+/*	padding-bottom: 5px;*/
+/*	top: 60%;*/
+/*	bottom: 10%;*/
+}
+
+/* Text Box + Emote Input Shadows */
+[data-slate-object="block"], /* .slateTextArea-1Mkdgw */ .buttons-3JBrkn
+{
+	background-color: var(--Steamcord-textinput-background);
+	box-shadow: var(--Steamcord-textinput-box-shadow);
 }
 
 /* Text Box Text */
 .placeholder-37qJjk, .slateTextArea-1Mkdgw
 {
-	padding-left: 10px;
+/*	padding-left: 10px;*/
 }
 
 /* Text Box Input Size */
 .textArea-12jD-V
 {
-	margin-right: 100px ; /* Text Box Location (Less is more) */
+	margin-right: 100px; /* Text Box Location (Less is more) */
 }
 
 /*-----------------------------------------
 				Text Buttons
 -----------------------------------------*/
 
-/* Chat Buttons Global */
+/* Chat Buttons */
 .buttons-3JBrkn
 {
-	right: var(--Steamcord-textchat-emoji-right); /* Button Location (Less is more) */ 
-	height: 43.09px;
+	position: sticky;
+	right: var(--Steamcord-textchat-buttons-right); /* Button Location (Less is more) */ 
+	height: var(--Steamcord-textchat-buttons-height);
+	top: var(--Steamcord-textchat-buttons-bottom);
 }
 
 /* Chat Button Removals */
@@ -359,16 +405,16 @@ button[aria-label="Send a gift"], button[aria-label="Open GIF picker"], button[a
 /* Emoji Picker Button */
 button[aria-label="Select emoji"]
 {
-	margin-right: 0px; /* Controls Emoji Container Size */
-	margin-left: 1px;  /* Controls Emoji Container Size */
+	margin-right: var(--Steamcord-textchat-buttons-background-right); /* Controls Emoji Container Size */
+	margin-left: var(--Steamcord-textchat-buttons-background-left);  /* Controls Emoji Container Size */
 }
 
 /* Emoji Sprite Global */
 .sprite-2iCowe,
 .attachButtonInner-PQjIyk
 {
-	width: 34px;
-	height: 34px;
+	width: var(--Steamcord-textchat-buttons-width);
+	height: var(--Steamcord-textchat-buttons-height);
 }
 
 /* Remove the ugly Emoji Sprites */
@@ -415,10 +461,9 @@ button[aria-label="Select emoji"]
 {
 	position: absolute;
 	border-radius: 0px;
-	height: 43.08px;
-	width: 41.98px;
+	width: var(--Steamcord-textchat-buttons-height-width);
 /*	top: 4px;*/
-	right:  calc(var(--Steamcord-textchat-emoji-right) + -73.6vw) ; /* Distance from Emoji Picker */
+	right:  calc(var(--Steamcord-textchat-buttons-right) + -73.6vw) ; /* Distance from Emoji Picker */
 	padding-left: 4px;
 	padding-right: 4px;
 	padding-top: 4px;
